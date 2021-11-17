@@ -1,0 +1,25 @@
+<article class="shop-item">
+    <header class="item-header">
+        <h3>{{ product.name }}</h3>
+    </header>
+    <div class="item-image">
+        <img [src]="product.imagePath" alt="">
+    </div>
+    <div class="item-content">
+        <h2 class="item-price">€{{product.price}}</h2>
+        <p class="item-description">{{ product.description }}</p>
+    </div>
+    <div class="item-action">
+        <button 
+            class="btn btn-alert"
+            (click)="onEdit()"
+        >
+            Edit
+        </button>
+        <button class="btn btn-alert" (click)="onRemoveProduct()">
+            Remove
+        </button>
+    </div>
+</article>
+
+<!-- [routerLink]="['/admin/edit-product', productId]" -->

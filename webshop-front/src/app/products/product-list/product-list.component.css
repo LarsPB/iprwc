@@ -1,0 +1,30 @@
+.container {
+    height: 60vh;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    /* background-color: brown; */
+}
+
+.pagination-container {
+    text-align: center;
+    color: black;
+    padding: 2rem;
+}
+
+.my-pagination {
+    font-size: larger;
+    color: red;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 0;
+        height: 100%;
+        flex-direction: column;
+    }
+}

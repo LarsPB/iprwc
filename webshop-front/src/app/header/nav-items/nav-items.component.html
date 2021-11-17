@@ -1,0 +1,32 @@
+<nav>
+    <div class="wrap-container">
+        <ul class="flex-container">
+            <li class="li" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/"><a>LOGO</a></li>
+            <li class="expand" routerLinkActive="active"><a [routerLink]="'/shop'">Bekijk ons assortiment</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-menu-li" [routerLink]="'/products'"><a>Computers & tablets </a></li>
+                    <li class="dropdown-menu-li" [routerLink]="'/products'"><a>Beeld & geluid</a></li>
+                    <li class="dropdown-menu-li" [routerLink]="'/products'"><a>Telefonie</a></li>
+                    <li class="dropdown-menu-li" [routerLink]="'/products'"><a>Huishouden & wonen</a></li>                
+                </ul>
+            </li>
+            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onNewProduct()"><a>Add Product</a></li>
+            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onAdminProducts()"><a>Admin Products</a></li>
+            <li>
+                <app-nav-searchbar></app-nav-searchbar>
+            </li>
+            <li *ngIf="!userIsAuthenticated" class="li" routerLinkActive="active" [routerLink]="'/login'">
+                <a>Login</a>
+            </li>
+            <li *ngIf="userIsAuthenticated" class="li" routerLinkActive="active" (click)="onLogout()">
+                <a>Logout</a>
+            </li>
+            <li class="li" routerLinkActive="active" routerLink="/shopping-cart">
+                <a>
+                    <i class='fas fa-shopping-cart' style="font-size:15px"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+

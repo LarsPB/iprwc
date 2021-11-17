@@ -1,0 +1,88 @@
+<h1>Winkelwagen</h1>
+<div class="container">
+    <app-shopping-item 
+        *ngFor="let cartProduct of products; let i = index"
+        [cartProduct]="cartProduct"
+        [productId]="i">
+    </app-shopping-item>
+    <div class="emptyCartContainer" *ngIf="!hasProducts">
+        <p>The shoppingcart is empty.</p>
+    </div>
+    <div class="subcontainer" *ngIf="hasProducts">
+        <div class="price-container">
+            <section>
+                <h3>Subtotaal</h3>
+                <h3>€ {{ totalPrice }}</h3>
+            </section>
+            <section>
+                <h3>Totaalprijs</h3>
+                <h3>€ {{ totalPrice }}</h3>
+            </section>
+        </div>
+        <div class="options-container">
+            <button class="btn btn-back" (click)="backToShop()">Verder winkelen</button>
+            <button class="btn btn-success" (click)="checkoutCart()">Naar de kassa</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <h1>Shopping cart</h1>
+    <app-shopping-item>
+
+    </app-shopping-item>
+    <div class="shop-item" *ngFor="let cartProduct of products; let i = index">
+        <div class="image-container">
+            <img class="img" [src]="cartProduct.imagePath" alt="">
+        </div>
+        <div class="product-container">
+            <h2>{{cartProduct.name}}</h2>
+            <app-shopping-edit
+                [product]="cartProduct"
+                [productId]="i" 
+            ></app-shopping-edit>
+        </div>
+        <p>€ {{(cartProduct.price * cartProduct.quantity)}}</p>
+
+
+    </div>
+</div> -->

@@ -1,0 +1,38 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()" class="login-form">
+    <div class="form-control">
+        <label for="email">E-mail</label>
+        <input
+            type="email"
+            id="email"
+            formControlName="email"
+        >
+        <span *ngIf="f.email.touched && f.email.invalid">Please enter a valid email!</span>
+
+    </div>
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input 
+            type="password"
+            id="password"
+            formControlName="password"
+        >
+        <div *ngIf="f.password.errors">
+            <span *ngIf="f.password.touched && f.password.errors.required">Password is required</span>
+            <span *ngIf="f.password.touched && f.password.errors.minlength">Password must be at least 6 characters</span>
+        </div>
+    </div>
+    <div class="form-control">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+        >
+        <div *ngIf="f.confirmPassword.errors">
+            <span *ngIf="f.confirmPassword.touched && f.confirmPassword.errors.required">Password is required</span>
+            <span *ngIf="f.confirmPassword.touched && f.confirmPassword.errors.mustMatch">Passwords must match</span>
+        </div>
+
+    </div>
+    <button class="btn" type="submit" [disabled]="signupForm.invalid">Signup</button>
+</form>

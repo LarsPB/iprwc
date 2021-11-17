@@ -1,0 +1,14 @@
+<div class="container">
+    <app-product-item
+        *ngFor="let productEl of products | 
+        paginate: { 
+            itemsPerPage: 4, 
+            currentPage: page,
+            totalItems: totalLength
+        }"
+        [product]="productEl"
+    ></app-product-item>
+</div>
+<div class="pagination-container">
+    <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+</div>

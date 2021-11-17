@@ -1,0 +1,56 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="login-form">
+    <div class="form-control">
+        <label for="productName">Product name</label>
+        <input
+            type="text"
+            name="productName"
+            id="productName"
+            formControlName="name"
+        >
+    </div>
+    <div class="image-preview" *ngIf="productForm.value.imagePath">
+        <img class="img" [src]="productForm.value.imagePath" [alt]="productForm.value.productName">
+    </div>
+    <div class="form-control">
+        <label for="imagePath">Image Path</label>
+        <input 
+            type="text"
+            name="imagePath"
+            id="imagePath"
+            formControlName="imagePath"
+            #imagePath
+        >
+    </div>
+    <div class="form-control">
+        <label for="category">Product category</label>
+        <select id="category" name="category">
+            <option value="computer-tablet">Computers & tablets</option>
+            <option value="beeld-geluid">Beeld & geluid</option>
+            <option value="telefonie">Telefonie</option>
+            <option value="huishouden-wonen">Huishouden & wonen</option>
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="productPrice">Price</label>
+        <input 
+            type="number"
+            name="productPrice"
+            id="productPrice"
+            formControlName="price"
+        >
+    </div>
+    <div class="form-control">
+        <label for="productDesc">Description</label>
+        <textarea 
+            name="productDesc" 
+            id="productDesc" 
+            rows="5" 
+            formControlName="description"
+            ></textarea>
+    </div>
+    <button 
+        class="btn"
+        type="submit"
+        [disabled]="!productForm.valid"
+        >{{editMode === false ? 'Add Product' : 'Update Product'}}</button>
+</form>

@@ -1,0 +1,19 @@
+<article class="shop-item">
+    <header class="item-header">
+        <h3>{{ product.name }}</h3>
+    </header>
+    <div class="item-image">
+        <img [src]="product.imagePath" alt="">
+    </div>
+    <div class="item-content">
+        <h2 class="item-price">€ {{ product.price }}</h2>
+        <p class="item-description">{{ product.description }}</p>
+    </div>
+    <div class="item-action">
+        <button class="btn" (click)="onSelected()">Details</button>
+        <button class="btn btn-success" (click)="onAddToCart()">
+            <i class='fas fa-shopping-cart' style="font-size:15px"></i>
+            Add to cart
+        </button>
+    </div>
+</article>

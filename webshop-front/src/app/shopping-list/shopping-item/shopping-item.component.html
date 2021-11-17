@@ -1,0 +1,30 @@
+<div class="shop-item">
+    <div class="item">
+        <div class="image-container">
+            <img class="img" [src]="cartProduct.imagePath" alt="">
+        </div>
+        <div class="product-info">
+            <h2>{{cartProduct.name}}</h2>
+            <p>Art-Nr. {{cartProduct.id | slice:0:6}}</p>
+            <p>€ {{cartProduct.price}}</p>
+        </div>
+    </div>
+    <div class="edit-container">
+        <h2>Aantal</h2>
+        <div class="edit-box">
+            <div class="flexbox">
+                <button class="btn" (click)="onDecrease()">-</button>
+                <p>{{ cartProduct.quantity }}</p>
+                <button class="btn" (click)="onIncrease()">+</button>
+                <button class="btn btn-delete" (click)="onDelete()">
+                    <i class="fas fa-trash"></i>
+                </button>
+
+            </div>
+            <div class="totalPrice">
+                <h3>€ {{cartProduct.price * cartProduct.quantity}}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>

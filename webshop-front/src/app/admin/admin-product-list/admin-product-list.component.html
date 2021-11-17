@@ -1,0 +1,7 @@
+<div class="container">
+    <app-admin-product-item
+        *ngFor="let productEl of products; let i = index"
+        [product]="productEl"
+        [productId]="i"
+    ></app-admin-product-item>
+</div>
