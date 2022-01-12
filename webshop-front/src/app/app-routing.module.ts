@@ -10,8 +10,8 @@ import { ResetPasswordComponent } from "./auth/reset-password/reset-password.com
 import { SignupComponent } from "./auth/signup/signup.component";
 import { ErrorPageComponent } from "./error-page/error-page.component";
 import { ProductsComponent } from "./products/products.component";
-import { MainpageShopComponent } from "./shop/mainpage-shop/mainpage-shop.component";
-import { ShopComponent } from "./shop/shop.component";
+import { MainpageShopComponent } from "./shop-categories/mainpage-shop/mainpage-shop.component";
+import { ShopCategoriesComponent } from "./shop-categories/shop-categories.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
@@ -19,36 +19,47 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'reset', component: ResetPasswordComponent},
     { path: 'signup', component: SignupComponent},
-
-
-    { path: 'shop', component: ShopComponent},
+    { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
+    { path: 'category', component: ShopCategoriesComponent},
     { path: 'shopping-cart', component: ShoppingListComponent},
 
     { path: 'products', component: ProductsComponent },
 
-    { path: "admin", component: AdminComponent, children: [
-        {path: "products", component:AdminProductListComponent, children: [
-            {path: "", component:AdminProductListComponent},
-            {path: ":id", component:AdminProductListComponent},
-            {path: ":id/edit", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard], 
-                data: {
-                    roles: "ADMIN"
-                } 
-            }
-        ]},
-        {path: "add-product", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard],
-            data: {
-                roles: "ADMIN"
-            } 
-        },
-        {path: "edit-product/:id", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard],
-            data: {
-                roles: "ADMIN"
-            }  
-        }
+    { path: "admin", component: AdminComponent, canActivate: [AuthGuard, HasRoleGuard], data: { roles: "ADMIN" }, children: [
+        {path: "products", component:AdminProductListComponent },
+        {path: "add-product", component:AdminProductEditComponent },
+        {path: "edit-product/:id", component:AdminProductEditComponent}
     ]},
 
-    { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
+
+    // { path: "admin", component: AdminComponent, children: [
+    //     {path: "products", component:AdminProductListComponent, canActivate: [AuthGuard, HasRoleGuard],
+    //         data: {
+    //             roles: "ADMIN"
+    //         }
+    //     },
+        // {path: "products", component:AdminProductListComponent, children: [
+        //     {path: "", component:AdminProductListComponent},
+        //     {path: ":id", component:AdminProductListComponent},
+        //     {path: ":id/edit", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard], 
+        //         data: {
+        //             roles: "ADMIN"
+        //         } 
+        //     }
+        // ]},
+    //     {path: "add-product", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard],
+    //         data: {
+    //             roles: "ADMIN"
+    //         } 
+    //     },
+    //     {path: "edit-product/:id", component:AdminProductEditComponent, canActivate: [AuthGuard, HasRoleGuard],
+    //         data: {
+    //             roles: "ADMIN"
+    //         }  
+    //     }
+    // ]},
+
+
     { path: '**', redirectTo: '/not-found'}
 ];
 

@@ -26,9 +26,8 @@ import { ProductItemComponent } from './products/product-list/product-item/produ
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductService } from './products/product.service';
 import { ProductsComponent } from './products/products.component';
-import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { MainpageShopComponent } from './shop/mainpage-shop/mainpage-shop.component';
-import { ShopComponent } from './shop/shop.component';
+import { MainpageShopComponent } from './shop-categories/mainpage-shop/mainpage-shop.component';
+import { ShopCategoriesComponent } from './shop-categories/shop-categories.component';
 import { ShoppingItemComponent } from './shopping-list/shopping-item/shopping-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -39,7 +38,6 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     AppComponent,
     HeaderComponent,
     NavItemsComponent,
-    ShopComponent,
     FooterComponent,
     AuthComponent,
     SignupComponent,
@@ -59,8 +57,8 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     AdminProductEditComponent,
     ResetPasswordComponent,
     LoginComponent,
-    LoadingSpinnerComponent,
-    ShoppingItemComponent
+    ShoppingItemComponent,
+    ShopCategoriesComponent
   ],
   imports: [
     BrowserModule,

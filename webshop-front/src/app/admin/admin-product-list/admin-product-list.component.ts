@@ -11,6 +11,8 @@ import { ProductService } from 'src/app/products/product.service';
 export class AdminProductListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   private subscription: Subscription;
+  totalLength:any;
+  page:number = 1;
 
   constructor(private productService: ProductService) { }
 
@@ -20,6 +22,8 @@ export class AdminProductListComponent implements OnInit, OnDestroy {
       .subscribe(
         (products: Product[]) => {
           this.products = products;
+          this.totalLength = products.length;
+          console.log(this.totalLength);
         }
       );
   }

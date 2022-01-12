@@ -10,7 +10,16 @@
     /* height: 100%; */
 }
 
+.pagination-container {
+    text-align: center;
+    color: black;
+    padding: 2rem;
+}
 
+.my-pagination {
+    font-size: larger;
+    color: red;
+}
 
 
 
