@@ -10,8 +10,8 @@
                     <li class="dropdown-menu-li" [routerLink]="'/products'"><a>Huishouden & wonen</a></li>                
                 </ul>
             </li>
-            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onNewProduct()"><a>Add Product</a></li>
-            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onAdminProducts()"><a>Admin Products</a></li>
+            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onNewProduct()"><a>Toevoegen Product</a></li>
+            <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onAdminProducts()"><a>Admin Producten</a></li>
             <li>
                 <app-nav-searchbar></app-nav-searchbar>
             </li>

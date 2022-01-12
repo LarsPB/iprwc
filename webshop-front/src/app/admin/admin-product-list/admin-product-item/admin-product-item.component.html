@@ -6,7 +6,7 @@
         <img [src]="product.imagePath" alt="">
     </div>
     <div class="item-content">
-        <h2 class="item-price">€{{product.price}}</h2>
+        <h2 class="item-price">€{{product.price | number:'1.2-2'}}</h2>
         <p class="item-description">{{ product.description }}</p>
     </div>
     <div class="item-action">
@@ -14,10 +14,10 @@
             class="btn btn-alert"
             (click)="onEdit()"
         >
-            Edit
+            Aanpassen
         </button>
         <button class="btn btn-alert" (click)="onRemoveProduct()">
-            Remove
+            Verwijderen
         </button>
     </div>
 </article>

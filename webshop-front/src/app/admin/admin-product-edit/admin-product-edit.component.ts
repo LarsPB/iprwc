@@ -15,7 +15,6 @@ export class AdminProductEditComponent implements OnInit {
   id: number;  
   editMode = false;
   productForm: FormGroup;
-  numRegex = /^-?\d*[.,]?\d{0,2}$/;
   private subscription: Subscription;
   updatedProduct: Product;
 
@@ -38,8 +37,6 @@ export class AdminProductEditComponent implements OnInit {
 
   }
 
-
-
   onSubmit() {
     if (this.editMode) {
       this.updatedProduct = this.productService.getProduct(this.id);
@@ -52,8 +49,6 @@ export class AdminProductEditComponent implements OnInit {
     this.productForm.reset(this.productForm.value);
     this.router.navigate(['/admin/products']);
   }
-
-
 
   private initForm() {
     let productId = '';
@@ -73,7 +68,7 @@ export class AdminProductEditComponent implements OnInit {
     this.productForm = new FormGroup({
       'name': new FormControl(productName, Validators.required),
       'imagePath': new FormControl(productImagePath, Validators.required),
-      'price': new FormControl(productPrice, [Validators.required, Validators.pattern(this.numRegex)]),
+      'price': new FormControl(productPrice, [Validators.required, Validators.pattern('^[0-9]+(.[0-9]{0,2})?$')]),
       'description': new FormControl(productDescription, Validators.required),
     });
 

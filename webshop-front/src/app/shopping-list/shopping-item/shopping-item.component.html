@@ -22,7 +22,7 @@
 
             </div>
             <div class="totalPrice">
-                <h3>€ {{cartProduct.price * cartProduct.quantity}}</h3>
+                <h3>€ {{(cartProduct.price * cartProduct.quantity) | number:'1.2-2'}}</h3>
             </div>
         </div>
     </div>
