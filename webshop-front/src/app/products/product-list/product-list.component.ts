@@ -14,7 +14,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   totalLength:any;
   page:number = 1;
-  
+
+
   constructor(private productService: ProductService){}
 
   ngOnInit(): void {

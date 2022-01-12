@@ -28,3 +28,37 @@
         flex-direction: column;
     }
 }
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .container {
+        /* background-color: red; */
+        margin:0;
+        height:60vh;
+        width:100%;
+        padding:2rem;
+   
+        flex-direction: column;
+        gap:1rem;
+        flex-wrap:nowrap;
+    }
+
+    .pagination-container {
+        display: none;
+    }
+
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+
+
+

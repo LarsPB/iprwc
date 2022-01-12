@@ -12,7 +12,7 @@
             </li>
             <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onNewProduct()"><a>Toevoegen Product</a></li>
             <li *ngIf="isAdmin" class="li" routerLinkActive="active" (click)="onAdminProducts()"><a>Admin Producten</a></li>
-            <li>
+            <li class="searchbar">
                 <app-nav-searchbar></app-nav-searchbar>
             </li>
             <li *ngIf="!userIsAuthenticated" class="li" routerLinkActive="active" [routerLink]="'/login'">

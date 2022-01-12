@@ -75,11 +75,56 @@ a {
 }
 
 
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
 
-@media (max-width: 800px) {
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     nav {
         flex-direction: column;
         height: 100%;
+        width: 100%;
+    }
+
+    .wrap-container {
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .flex-container, .container {
+        flex-direction: column;
+
+    }
+
+    .li {
+        flex-direction: column;
+        text-decoration: none;
+        padding: 1.5rem 0;
+    }
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .expand:hover ul {
+        display: none;
+    }
+
+    .searchbar {
+        display:none;
+    }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    nav {
+        flex-direction: column;
+        height: 100%;
+        width:100%;
     }
     
     .wrap-container {
@@ -108,3 +153,5 @@ a {
     }
 
 }
+
+
