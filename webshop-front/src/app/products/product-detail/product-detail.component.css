@@ -65,3 +65,35 @@
     color:white;
 }
 
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .transparent {
+        height:100%;
+        overflow: hidden;
+    }
+    .container {
+        margin:0 auto;
+        margin-top:15rem;
+        padding:0;
+        width:80%;
+    }
+
+    .shop-item {
+        width:100%;
+    }
+
+
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}
+

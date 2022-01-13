@@ -83,6 +83,8 @@ a {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     nav {
+        position:sticky;
+        top:0;
         flex-direction: column;
         height: 100%;
         width: 100%;
