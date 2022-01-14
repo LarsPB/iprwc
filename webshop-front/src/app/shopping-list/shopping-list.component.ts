@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CartProduct } from './cartProduct.model';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -12,13 +13,14 @@ export class ShoppingListComponent implements OnInit {
   products: CartProduct[];
   hasProducts: boolean = false;
   totalPrice: number;
+  private productListenersubs:Subscription;
 
   constructor(private shoppingListService: ShoppingListService,
     private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.products = this.shoppingListService.getProducts();
-    this.shoppingListService.productsChanged
+    this.productListenersubs = this.shoppingListService.productsChanged
       .subscribe(
         (products: CartProduct[]) => {
           this.products = products;
@@ -32,6 +34,10 @@ export class ShoppingListComponent implements OnInit {
           console.log('dit is? ', this.hasProducts );
         }
       );
+  }
+
+  ngOnDestroy():void {
+    this.productListenersubs.unsubscribe();
   }
 
   setTotalPrice() {

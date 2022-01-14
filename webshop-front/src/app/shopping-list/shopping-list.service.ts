@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { AuthService } from "../auth/auth.service";
 import { Product } from "../products/product.model";
 import { CartProduct } from "./cartProduct.model";
 
@@ -11,7 +12,7 @@ export class ShoppingListService {
     private products: Product[] = [];
     private cartProducts: CartProduct[] = [];
     private totalPrice: number;
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient, private authService:AuthService){}
 
     setLocalProductPrice(index: number, quantity:number){
         this.cartProducts[index].quantity = quantity;
@@ -35,7 +36,8 @@ export class ShoppingListService {
 
 
     getProducts() {
-        this.http.get<{message: string, products: any[]}>('http://localhost:3000/api/user/cart')
+        if(this.authService.getIsAuthenticated()) {
+            this.http.get<{message: string, products: any[]}>('http://localhost:3000/api/user/cart')
             .pipe(map((postData) => {
                 return postData.products.map(product => {
                     return {
@@ -52,7 +54,12 @@ export class ShoppingListService {
                 this.setLocalTotalPrice();
                 this.productsChanged.next(this.cartProducts.slice());
             })
-        return this.cartProducts.slice();
+            return this.cartProducts.slice();
+        } else {
+            this.products.length = 0;
+            this.cartProducts.length = 0;
+            return this.cartProducts.slice();
+        }
     }
 
     addProduct(newProduct: Product){

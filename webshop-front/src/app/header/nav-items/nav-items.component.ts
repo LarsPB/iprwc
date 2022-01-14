@@ -38,6 +38,7 @@ export class NavItemsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
     this.isAdminSubs.unsubscribe();
+    this.userIsAuthenticated = false;
   }
 
   onNewProduct(){

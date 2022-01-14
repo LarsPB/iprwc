@@ -80,6 +80,19 @@ export class AuthService {
             });
     }
 
+    logout() {
+        this.token = "";
+        this.isAuthenticated = false;
+        this.isAdmin = false;
+        this.authStatusListener.next(false);
+        this.isAdminListener.next(false);
+        clearTimeout(this.tokenTimer);
+        this.clearAuthData();
+        this.router.navigate(['/']);
+    }
+
+
+
     private getUser(token: string):UserModel{
         return JSON.parse(atob(token.split(".")[1])) as UserModel;
     }
@@ -101,16 +114,7 @@ export class AuthService {
 
 
 
-    logout() {
-        this.token = "";
-        this.isAuthenticated = false;
-        this.isAdmin = false;
-        this.authStatusListener.next(false);
-        this.isAdminListener.next(false);
-        clearTimeout(this.tokenTimer);
-        this.clearAuthData();
-        this.router.navigate(['/']);
-    }
+
 
     private setAuthTimer(duration:number) {
         this.tokenTimer = setTimeout(() => {
