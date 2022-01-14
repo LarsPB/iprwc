@@ -18,6 +18,8 @@ export class ShoppingItemComponent implements OnInit {
 
   }
 
+  
+
   onDelete(){
     this.shoppingListService.deleteProduct(this.productId)
   }
