@@ -82,14 +82,19 @@
         margin-top:15rem;
         padding:0;
         width:80%;
+        height:60%;
+
     }
 
     .shop-item {
         width:100%;
+        padding:0;
     }
 
-
-
+    .item-content {
+        padding:0;
+        height:4rem;
+    }
 }
 
 /* iPads (portrait and landscape) ----------- */

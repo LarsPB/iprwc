@@ -16,7 +16,7 @@ export class NavItemsComponent implements OnInit, OnDestroy {
 
   isAdmin:boolean = false;
 
-  constructor(private recipeService: ProductService,
+  constructor(private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService) { }

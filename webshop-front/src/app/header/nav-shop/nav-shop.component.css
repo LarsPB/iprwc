@@ -101,8 +101,4 @@ a:hover {
     border-bottom: 3px solid hsl(213, 91%, 44%);
 }
 
-@media (max-width: 800px){
-    nav {
-        display: none;
-    }
-}
+

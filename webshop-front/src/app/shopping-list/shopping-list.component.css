@@ -88,3 +88,40 @@ section {
 .emptyCartContainer p {
     text-align: center;
 }
+
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .container {
+        width:95%;
+    }
+
+    section {
+        width:100%;
+    }
+
+    .options-container {
+        width:100%;
+        margin:0;
+        padding-left:0;
+        padding-right:0;
+        justify-content: space-between;
+        gap:1rem;
+    }
+
+    .btn {
+        width:100%;
+        padding:.5rem 2rem;
+    }
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}

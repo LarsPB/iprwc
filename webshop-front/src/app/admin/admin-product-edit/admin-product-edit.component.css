@@ -69,10 +69,26 @@
     width: 100%;
 }
 
-@media (max-width: 800px) {
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .image-preview {
+        height:80%;
+        width:80%;
+    }
     .login-form {
         width: 80%;
         padding: 1rem;
     }
+
 }
 
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+}

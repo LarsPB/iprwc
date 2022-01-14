@@ -2,18 +2,13 @@
     <app-admin-product-item
         *ngFor="let productEl of products | 
         paginate: { 
-            itemsPerPage: 10, 
+            itemsPerPage: 5, 
             currentPage: page,
             totalItems: totalLength
         }; let i = index"
         [product]="productEl"
         [productId]="i"
     ></app-admin-product-item>
-    <!-- <app-admin-product-item
-    *ngFor="let productEl of products; let i = index"
-    [product]="productEl"
-    [productId]="i"
-></app-admin-product-item> -->
 </div>
 <div class="pagination-container">
     <pagination-controls autoHide="true" previousLabel="Vorige" nextLabel="Volgende" class="my-pagination" (pageChange)="page = $event"></pagination-controls>
