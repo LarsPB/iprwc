@@ -38,6 +38,6 @@ app.use("/api/user/cart", cartRoutes);
 // Creates the admin account:
 // createAdmin();
 
-app.listen(process.env.PORT || 3000, '192.168.1.193',(req, res) => {
+app.listen(process.env.PORT || 3000,(req, res) => {
     console.log('api is running on port 3000');
 });
