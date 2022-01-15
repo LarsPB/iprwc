@@ -27,13 +27,19 @@ export class ShoppingListService {
         });
         this.totalPrice = +amount.toFixed(2);
         this.productsChanged.next(this.cartProducts.slice());
+        this.cartProducts.forEach(element => {
+            console.log('Wat is dit in de service? ' + element.name + ' ' + element.quantity);
+
+        });
     }
 
     getLocalTotalPrice(){
         return this.totalPrice;
     }
 
-
+    // checkoutProducts(){
+    //     this.http.post<{}>('http://localhost:3000/api/user/cart')
+    // }
 
     getProducts() {
         if(this.authService.getIsAuthenticated()) {

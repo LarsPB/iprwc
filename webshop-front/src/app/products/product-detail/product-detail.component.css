@@ -83,7 +83,28 @@
         padding:0;
         width:80%;
         height:60%;
+    }
 
+    header {
+        padding:0;
+    }
+
+    .item-image {
+        height:50%;
+        width:100%;
+    }
+
+    .item-content {
+        height:4rem;
+    }
+
+    .item-action {
+        padding:0;
+    }
+
+    img {
+        max-height:100%;
+        max-width:100%;
     }
 
     .shop-item {
@@ -93,7 +114,7 @@
 
     .item-content {
         padding:0;
-        height:4rem;
+        /* height:3.5rem; */
     }
 }
 

@@ -4,61 +4,55 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { AdminProductEditComponent } from './admin/admin-product-edit/admin-product-edit.component';
-import { AdminProductItemComponent } from './admin/admin-product-list/admin-product-item/admin-product-item.component';
-import { AdminProductListComponent } from './admin/admin-product-list/admin-product-list.component';
-import { AdminComponent } from './admin/admin.component';
+import { AdminProductsModule } from './admin/admin-products.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { LoginComponent } from './auth/login/login.component';
-import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthModule } from './auth/auth.module';
+import { ErrorPageModule } from './error-page/error-page.module';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { NavItemsComponent } from './header/nav-items/nav-items.component';
-import { NavSearchbarComponent } from './header/nav-items/nav-searchbar/nav-searchbar.component';
-import { NavShopComponent } from './header/nav-shop/nav-shop.component';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
-import { ProductItemComponent } from './products/product-list/product-item/product-item.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
+import { HeaderModule } from './header/header.module';
 import { ProductService } from './products/product.service';
-import { ProductsComponent } from './products/products.component';
-import { MainpageShopComponent } from './shop-categories/mainpage-shop/mainpage-shop.component';
-import { ShopCategoriesComponent } from './shop-categories/shop-categories.component';
-import { ShoppingItemComponent } from './shopping-list/shopping-item/shopping-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ProductsModule } from './products/products.module';
+import { ShopCategoriesModule } from './shop-categories/shop-categories.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavItemsComponent,
-    FooterComponent,
-    AuthComponent,
-    SignupComponent,
-    ErrorPageComponent,
-    NavShopComponent,
-    NavSearchbarComponent,
-    MainpageShopComponent,
-    ProductsComponent,
-    ProductListComponent,
-    ProductItemComponent,
-    AdminComponent,
-    ProductDetailComponent,
-    ShoppingListComponent,
 
-    AdminProductListComponent,
-    AdminProductItemComponent,
-    AdminProductEditComponent,
-    ResetPasswordComponent,
-    LoginComponent,
-    ShoppingItemComponent,
-    ShopCategoriesComponent
+    FooterComponent
+
+    // ErrorPageComponent,
+
+    // HeaderComponent,
+    // NavItemsComponent,
+    // NavShopComponent,
+    // NavSearchbarComponent,
+
+    // ProductsComponent,
+    // ProductListComponent,
+    // ProductItemComponent,
+    // ProductDetailComponent,
+
+    // MainpageShopComponent,
+    // ShopCategoriesComponent,
+
+    // ShoppingListComponent,
+    // ShoppingItemComponent,
+
+    // AdminComponent,
+    // AdminProductListComponent,
+    // AdminProductItemComponent,
+    // AdminProductEditComponent,
+
+    // AuthComponent,
+    // SignupComponent,
+    // ResetPasswordComponent,
+    // LoginComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -67,7 +61,14 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ProductsModule,
+    AdminProductsModule,
+    HeaderModule,
+    AuthModule,
+    ShoppingListModule,
+    ShopCategoriesModule,
+    ErrorPageModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, ShoppingListService, ProductService],
   bootstrap: [AppComponent]
