@@ -4,7 +4,8 @@ import { AuthGuard } from "./auth/auth.guard";
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch:'full'},
-    { path: 'admin', loadChildren: () => import('./admin/admin-products.module').then(m => m.AdminProductsModule) }
+    { path: 'admin', loadChildren: () => import('./admin/admin-products.module').then(m => m.AdminProductsModule) },
+    { path: 'shopping-cart', loadChildren: () => import('./shopping-list/shopping-list.module').then(m => m.ShoppingListModule) }
 
 ];
 
