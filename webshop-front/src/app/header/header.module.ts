@@ -1,7 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
-import { NgxPaginationModule } from "ngx-pagination";
 import { AppRoutingModule } from "../app-routing.module";
 import { HeaderComponent } from "./header.component";
 import { NavItemsComponent } from "./nav-items/nav-items.component";
@@ -15,7 +13,7 @@ import { NavShopComponent } from "./nav-shop/nav-shop.component";
         NavShopComponent,
         NavSearchbarComponent
     ],
-    imports: [AppRoutingModule, CommonModule, ReactiveFormsModule, NgxPaginationModule],
+    imports: [AppRoutingModule, CommonModule],
     exports: [
         HeaderComponent,
         NavItemsComponent,

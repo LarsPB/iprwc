@@ -1,8 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
-import { NgxPaginationModule } from "ngx-pagination";
-import { AppRoutingModule } from "../app-routing.module";
 import { ShoppingItemComponent } from "./shopping-item/shopping-item.component";
 import { ShoppingListRoutingModule } from "./shopping-list-routing.module";
 import { ShoppingListComponent } from "./shopping-list.component";
@@ -14,7 +11,7 @@ import { ShoppingListComponent } from "./shopping-list.component";
         ShoppingListComponent,
         ShoppingItemComponent
     ],
-    imports: [AppRoutingModule, CommonModule, ReactiveFormsModule, NgxPaginationModule, ShoppingListRoutingModule],
+    imports: [CommonModule, ShoppingListRoutingModule],
     exports: [
         ShoppingListComponent,
         ShoppingItemComponent
