@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -20,6 +21,9 @@ mongoose.connect("mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
+// To detect and recognise the angular scripts
+app.use("/", express.static(path.join(__dirname,"angular")));
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -34,6 +38,13 @@ app.use((req, res, next) => {
 app.use("/api/products", productsRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/user/cart", cartRoutes);
+
+// Add the angular index.html to backend
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "angular", "index.html"));
+});
+
+
 
 // Creates the admin account:
 // createAdmin();
