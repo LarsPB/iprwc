@@ -1,9 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { AdminProductsModule } from './admin/admin-products.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -23,18 +20,13 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
   ],
   imports: [
     BrowserModule,
-    // FormsModule,
-    // ReactiveFormsModule,
+    ShopCategoriesModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    NgxPaginationModule,
     ProductsModule,
-    AdminProductsModule,
     HeaderModule,
     AuthModule,
     ShoppingListModule,
-    ShopCategoriesModule,
     CoreModule,
     ErrorPageModule
   ],

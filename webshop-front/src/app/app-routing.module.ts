@@ -3,6 +3,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./auth/auth.guard";
 
 const appRoutes: Routes = [
+    { path: '', redirectTo: '/', pathMatch:'full'},
+    { path: 'admin', loadChildren: () => import('./admin/admin-products.module').then(m => m.AdminProductsModule) }
 
 ];
 

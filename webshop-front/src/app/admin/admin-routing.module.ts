@@ -9,7 +9,7 @@ import { AdminComponent } from "./admin.component";
 
 
 const routes: Routes = [
-    { path: "admin", component: AdminComponent, canActivate: [AuthGuard, HasRoleGuard], data: { roles: "ADMIN" }, children: [
+    { path: "", component: AdminComponent, canActivate: [AuthGuard, HasRoleGuard], data: { roles: "ADMIN" }, children: [
         {path: "products", component:AdminProductListComponent },
         {path: "add-product", component:AdminProductEditComponent },
         {path: "edit-product/:id", component:AdminProductEditComponent}
