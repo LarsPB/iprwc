@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -20,42 +19,12 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 @NgModule({
   declarations: [
     AppComponent,
-
     FooterComponent
-
-    // ErrorPageComponent,
-
-    // HeaderComponent,
-    // NavItemsComponent,
-    // NavShopComponent,
-    // NavSearchbarComponent,
-
-    // ProductsComponent,
-    // ProductListComponent,
-    // ProductItemComponent,
-    // ProductDetailComponent,
-
-    // MainpageShopComponent,
-    // ShopCategoriesComponent,
-
-    // ShoppingListComponent,
-    // ShoppingItemComponent,
-
-    // AdminComponent,
-    // AdminProductListComponent,
-    // AdminProductItemComponent,
-    // AdminProductEditComponent,
-
-    // AuthComponent,
-    // SignupComponent,
-    // ResetPasswordComponent,
-    // LoginComponent
-    
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
+    // FormsModule,
+    // ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -66,8 +35,8 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     AuthModule,
     ShoppingListModule,
     ShopCategoriesModule,
-    ErrorPageModule,
-    CoreModule
+    CoreModule,
+    ErrorPageModule
   ],
   bootstrap: [AppComponent]
 })
