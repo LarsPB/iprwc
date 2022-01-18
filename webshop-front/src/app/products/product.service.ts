@@ -2,7 +2,11 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 import { map } from "rxjs/operators";
+import { environment } from "../../environments/environment";
 import { Product } from "./product.model";
+
+
+const BACKEND_URL = environment.apiUrl;
 
 @Injectable({providedIn: "root"})
 export class ProductService {
@@ -17,7 +21,7 @@ export class ProductService {
     getProducts() {
         this.http
             .get<{message: string, products: any[]}>(
-                'http://localhost:3000/api/products'
+                BACKEND_URL + '/products'
             )
             .pipe(map((postData) => {
                 console.log(postData.products);
@@ -51,7 +55,7 @@ export class ProductService {
             price: product.price, 
             description: product.description 
         };
-        this.http.post<{message: string, productId: string}>('http://localhost:3000/api/products', prod)
+        this.http.post<{message: string, productId: string}>(BACKEND_URL + '/products', prod)
             .subscribe(responseData => {
                 const id = responseData.productId; 
                 prod.id = id; //objects zijn referenced types, dus je kan de attributen editten van const prod
@@ -70,7 +74,7 @@ export class ProductService {
             price: newProduct.price,
             description: newProduct.description
         };
-        this.http.put('http://localhost:3000/api/products/' + productId, prod)
+        this.http.put(BACKEND_URL + '/products/' + productId, prod)
             .subscribe(response => {
                 const updatedProducts = [...this.products];
                 const oldProductIndex = updatedProducts.findIndex(p => p.id === prod.id);
@@ -82,7 +86,7 @@ export class ProductService {
 
     deleteProduct(index: number){
         const prod:Product = this.products[index];
-        this.http.delete('http://localhost:3000/api/products/' + prod.id)
+        this.http.delete(BACKEND_URL + '/products/' + prod.id)
             .subscribe(() => {
                 console.log('Deleted!');
                 this.products.splice(index, 1);
