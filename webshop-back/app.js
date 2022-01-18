@@ -12,10 +12,7 @@ const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
 const { create } = require('./models/user');
 
-// mongoose.connect("mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority", {
-  // "mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority"
-
-mongoose.connect(process.env.DATABASE || "mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority") 
+mongoose.connect("mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority")
   .then(() => {
     console.log('Connected to database!')
   })

@@ -5,8 +5,7 @@ import { map } from "rxjs/operators";
 import { environment } from "../../environments/environment";
 import { Product } from "./product.model";
 
-
-const BACKEND_URL = environment.apiUrl;
+const BACKEND_URL = environment.apiUrl + '/products';
 
 @Injectable({providedIn: "root"})
 export class ProductService {
@@ -21,7 +20,7 @@ export class ProductService {
     getProducts() {
         this.http
             .get<{message: string, products: any[]}>(
-                BACKEND_URL + '/products'
+                BACKEND_URL
             )
             .pipe(map((postData) => {
                 console.log(postData.products);
@@ -55,7 +54,7 @@ export class ProductService {
             price: product.price, 
             description: product.description 
         };
-        this.http.post<{message: string, productId: string}>(BACKEND_URL + '/products', prod)
+        this.http.post<{message: string, productId: string}>(BACKEND_URL, prod)
             .subscribe(responseData => {
                 const id = responseData.productId; 
                 prod.id = id; //objects zijn referenced types, dus je kan de attributen editten van const prod
@@ -74,7 +73,7 @@ export class ProductService {
             price: newProduct.price,
             description: newProduct.description
         };
-        this.http.put(BACKEND_URL + '/products/' + productId, prod)
+        this.http.put(BACKEND_URL + '/' + productId, prod)
             .subscribe(response => {
                 const updatedProducts = [...this.products];
                 const oldProductIndex = updatedProducts.findIndex(p => p.id === prod.id);
@@ -86,7 +85,7 @@ export class ProductService {
 
     deleteProduct(index: number){
         const prod:Product = this.products[index];
-        this.http.delete(BACKEND_URL + '/products/' + prod.id)
+        this.http.delete(BACKEND_URL + '/' + prod.id)
             .subscribe(() => {
                 console.log('Deleted!');
                 this.products.splice(index, 1);
