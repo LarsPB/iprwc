@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+
+
 const {createAdmin} = require('./models/admin');
 
 const PORT = process.env.PORT || '3000';
@@ -26,15 +28,15 @@ app.use(bodyParser.urlencoded({ extended: false}));
 // To detect and recognise the angular scripts
 app.use("/", express.static(path.join(__dirname,"angular")));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'OPTIONS, GET, POST, PUT, PATCH, DELETE'
-    );
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+//     res.setHeader(
+//       'Access-Control-Allow-Methods',
+//       'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+//     );
+//     next();
+// });
 
 
 app.use("/api/products", productsRoutes);

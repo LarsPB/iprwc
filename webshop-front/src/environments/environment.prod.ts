@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://iprwc-site.herokuapp.com/api"
+  apiUrl: "https://iprwc-site.herokuapp.com/api"
 };
