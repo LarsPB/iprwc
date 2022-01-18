@@ -10,7 +10,7 @@ const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
 const { create } = require('./models/user');
 
-mongoose.connect("mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority")
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority")
   .then(() => {
     console.log('Connected to database!')
   })
