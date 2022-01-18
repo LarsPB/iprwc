@@ -49,6 +49,10 @@ app.use((req, res, next) => {
 // Creates the admin account:
 // createAdmin();
 
+if (process.env.NODE_ENV === 'production') {
+  
+}
+
 app.listen(process.env.PORT || 3000,(req, res) => {
     console.log('api is running on port 3000');
 });
