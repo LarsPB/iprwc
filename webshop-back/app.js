@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const app = express();
 const {createAdmin} = require('./models/admin');
 
+const PORT = process.env.PORT || '3000';
+
 const productsRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
@@ -13,8 +15,7 @@ const { create } = require('./models/user');
 // mongoose.connect("mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority", {
   // "mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority"
 
-mongoose.connect("mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority"
-  ) 
+mongoose.connect(process.env.DATABASE || "mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority") 
   .then(() => {
     console.log('Connected to database!')
   })
@@ -53,7 +54,6 @@ app.use((req, res, next) => {
 // Creates the admin account:
 // createAdmin();
 
-
-app.listen(process.env.PORT || 3000,(req, res) => {
-    console.log('api is running on port 3000');
+app.listen(PORT, () => {
+    console.log(`api is running on port ${PORT}`);
 });

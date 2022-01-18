@@ -1,6 +1,6 @@
 {
     "env": {
-        "MONGO_ATLAS_PW":"ULMEI1Yjgbl39Ckq",
-        "JWT_KEY":"dit_is_een_groot_geheim"
+        "JWT_KEY":"dit_is_een_groot_geheim",
+        "DATABASE":"mongodb+srv://Lars:ULMEI1Yjgbl39Ckq@cluster0.pbc2o.mongodb.net/shop?&w=majority"
     }
 }
