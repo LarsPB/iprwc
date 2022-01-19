@@ -29,15 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false}));
 // To detect and recognise the angular scripts
 app.use("/", express.static(path.join(__dirname,"angular")));
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'OPTIONS, GET, POST, PUT, PATCH, DELETE'
-    );
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+//     res.setHeader(
+//       'Access-Control-Allow-Methods',
+//       'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+//     );
+//     next();
+// });
 
 
 app.use("/api/products", productsRoutes);
