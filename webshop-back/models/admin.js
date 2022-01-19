@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
-let password = "qazwsx";
+// let password = "qazwsx";
 
 exports.createAdmin = () => {
     User.findOne({role: "ADMIN"}, (err, admin) => {
@@ -9,13 +9,13 @@ exports.createAdmin = () => {
             return "admin account already exists"
         }
         User.create({
-            email: "larspb1994@gmail.com",
+            email: process.env.A_USER,
             roles: "ADMIN"
         }, (err, user) => {
             if(err) throw err
             bcrypt.genSalt(10, (err, salt) => {
                 if(err) throw err
-                bcrypt.hash(password, salt, (err, hash) => {
+                bcrypt.hash(process.env.A_USER_PW, salt, (err, hash) => {
                     if (err) throw err
                     user.password = hash;
                     user.save((err, savedUser) => {

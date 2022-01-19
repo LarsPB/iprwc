@@ -1,5 +1,7 @@
 {
     "env": {
+        "A_USER":"larspb1994@gmail.com",
+        "A_USER_PW":"qazwsx",
         "MONGO_ATLAS_PW":"ULMEI1Yjgbl39Ckq",
         "JWT_KEY":"dit_is_een_groot_geheim"
     }
