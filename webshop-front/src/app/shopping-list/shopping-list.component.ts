@@ -30,8 +30,6 @@ export class ShoppingListComponent implements OnInit {
           } else {
             this.hasProducts = false;
           }
-
-          console.log('dit is? ', this.hasProducts );
         }
       );
   }

@@ -30,10 +30,6 @@ export class ShoppingListService {
         });
         this.totalPrice = +amount.toFixed(2);
         this.productsChanged.next(this.cartProducts.slice());
-        this.cartProducts.forEach(element => {
-            console.log('Wat is dit in de service? ' + element.name + ' ' + element.quantity);
-
-        });
     }
 
     getLocalTotalPrice(){
@@ -88,10 +84,9 @@ export class ShoppingListService {
 
     deleteProduct(index: number){
         const prod: CartProduct = this.cartProducts[index];
-        console.log('wat is dit dan? ', prod.id);
         this.http.delete(BACKEND_URL + '/user/cart/' + prod.id)
             .subscribe(() => {
-                console.log('Deleted!');
+                // console.log('Deleted!');
                 this.cartProducts.splice(index, 1);
                 this.setLocalTotalPrice();
                 this.productsChanged.next(this.cartProducts.slice());

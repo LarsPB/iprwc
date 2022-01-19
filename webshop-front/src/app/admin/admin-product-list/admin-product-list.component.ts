@@ -23,7 +23,6 @@ export class AdminProductListComponent implements OnInit, OnDestroy {
         (products: Product[]) => {
           this.products = products;
           this.totalLength = products.length;
-          console.log(this.totalLength);
         }
       );
   }

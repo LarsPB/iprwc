@@ -40,8 +40,6 @@ export class AdminProductEditComponent implements OnInit {
   onSubmit() {
     if (this.editMode) {
       this.updatedProduct = this.productService.getProduct(this.id);
-      console.log("Wat is de updatedProductId? ", this.updatedProduct.id);
-
       this.productService.updateProduct(this.updatedProduct.id, this.productForm.value);
     } else {
       this.productService.addProduct(this.productForm.value);
@@ -71,10 +69,6 @@ export class AdminProductEditComponent implements OnInit {
       'price': new FormControl(productPrice, [Validators.required, Validators.pattern('^[0-9]+(.[0-9]{0,2})?$')]),
       'description': new FormControl(productDescription, Validators.required),
     });
-
-    
-    console.log(this.productForm.controls['name'].value);
-
   }
   
   

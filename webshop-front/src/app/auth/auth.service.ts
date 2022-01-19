@@ -45,7 +45,7 @@ export class AuthService {
         const authData: AuthData = {email: email, password: password};
         this.http.post(BACKEND_URL + "signup", authData)
             .subscribe(response => {
-                console.log(response);
+                // console.log(response);
             });
     }
 
@@ -79,7 +79,7 @@ export class AuthService {
                     console.log("Role is: ", this.isAdmin);
                     this.router.navigate(['/']);
                 }
-                console.log(response);
+                // console.log(response);
             });
     }
 

@@ -8,9 +8,6 @@ import { AdminProductListComponent } from "./admin-product-list/admin-product-li
 import { AdminProductsRoutingModule } from "./admin-routing.module";
 import { AdminComponent } from "./admin.component";
 
-
-
-
 @NgModule({
     declarations: [
         AdminComponent,

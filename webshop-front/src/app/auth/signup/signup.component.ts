@@ -40,11 +40,8 @@ export class SignupComponent implements OnInit {
     if (this.signupForm.invalid) {
       return;
     }
-    console.log(this.f['email'].value);
-    console.log(this.f['password'].value);
     this.authService.createUser(this.f['email'].value, this.f['password'].value);
     this.router.navigate(['/login'], {relativeTo: this.route});
-
   }
 
 

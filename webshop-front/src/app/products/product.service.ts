@@ -23,7 +23,6 @@ export class ProductService {
                 BACKEND_URL
             )
             .pipe(map((postData) => {
-                console.log(postData.products);
                 return postData.products.map(product => {
                     return {
                         id: product._id,
@@ -87,7 +86,7 @@ export class ProductService {
         const prod:Product = this.products[index];
         this.http.delete(BACKEND_URL + '/' + prod.id)
             .subscribe(() => {
-                console.log('Deleted!');
+                // console.log('Deleted!');
                 this.products.splice(index, 1);
                 this.productsChanged.next(this.products.slice());
             });
