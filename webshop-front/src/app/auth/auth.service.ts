@@ -75,8 +75,6 @@ export class AuthService {
                         this.isAdmin = true;
                         this.isAdminListener.next(true);
                     }
-
-                    console.log("Role is: ", this.isAdmin);
                     this.router.navigate(['/']);
                 }
                 // console.log(response);
