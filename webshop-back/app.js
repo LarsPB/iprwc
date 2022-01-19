@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 // const cors = require('cors');
+require('dotenv').config();
+console.log(process.env);
 
 const {createAdmin} = require('./models/admin');
 
