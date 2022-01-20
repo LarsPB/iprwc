@@ -1,6 +1,5 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
-// let password = "qazwsx";
 
 exports.createAdmin = () => {
     User.findOne({role: "ADMIN"}, (err, admin) => {
