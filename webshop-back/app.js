@@ -10,6 +10,15 @@ const PORT = process.env.PORT || '3000';
 const productsRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
+const { env } = require("process");
+
+const forceSSL = function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
+  }
+  return next();
+};
+
 
 mongoose.connect("mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority")
   .then(() => {
@@ -18,6 +27,10 @@ mongoose.connect("mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0
   .catch(() => {
     console.log('Connection failed!');
   });
+
+if(env === 'production') {
+  app.use(forceSSL);
+}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));

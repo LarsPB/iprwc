@@ -8,6 +8,4 @@ module.exports = (req, res, next) => {
         res.status(401).json({message: "This route is restricted to admin only" });
     }
     return next()
-
-    
 } 
