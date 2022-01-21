@@ -10,7 +10,7 @@ const PORT = process.env.PORT || '3000';
 const productsRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
 const cartRoutes = require('./routes/cart');
-const { env } = require("process");
+const env = process.env.NODE_ENV || 'development';
 
 const forceSSL = function (req, res, next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
@@ -18,7 +18,6 @@ const forceSSL = function (req, res, next) {
   }
   return next();
 };
-
 
 mongoose.connect("mongodb+srv://Lars:" + process.env.MONGO_ATLAS_PW + "@cluster0.pbc2o.mongodb.net/shop?&w=majority")
   .then(() => {
