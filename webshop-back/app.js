@@ -31,7 +31,6 @@ if(env === 'production') {
   app.use(forceSSL);
 }
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
@@ -46,6 +45,7 @@ app.use("/api/user/cart", cartRoutes);
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "angular", "index.html"));
 });
+
 
 app.listen(PORT, () => {
     console.log(`api is running on port ${PORT}`);
