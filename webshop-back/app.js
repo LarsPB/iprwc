@@ -31,6 +31,7 @@ if(env === 'production') {
   app.use(forceSSL);
 }
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cors());
