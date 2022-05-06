@@ -1,13 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MainpageShopComponent } from "./mainpage-shop/mainpage-shop.component";
+import { ProductsComponent } from "../products/products.component";
 import { ShopCategoriesComponent } from "./shop-categories.component";
 
 
 const routes: Routes = [
-    { path: '', component:MainpageShopComponent},
+    { path: '', component:ProductsComponent}, //Was MainpageShopComponent
     { path: 'category', component: ShopCategoriesComponent}
-
 
 ]
 @NgModule({
